@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #456a4b;
-  --primary-light: #798d73;
+  --primary-color: #456a4b;
+  --primary-light-color: #798d73;
   --secondary: #a8611a;
   --background: #fffbe7;
   --placeholder: #d1c6ac;
@@ -10,4 +10,8 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.primary-button {
+  @apply w-full font-medium transition-all duration-200 h-24 sm:h-16 uppercase bg-(--primary-light-color) cursor-pointer hover:bg-(--primary-color);
 }
