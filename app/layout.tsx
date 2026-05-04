@@ -4,6 +4,7 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import Switcher from "@/comonents/Switcher/Switcher";
+import InquireForm from "@/comonents/InquireForm/InquireForm";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,16 +30,11 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark:bg-black`}>
       <body className="min-h-full flex flex-col">
         <header className=" bg-red-300 flex justify-between items-center px-16 py-3">
-          <button className="">
-            <Image src="/icons/sound-icon.svg" alt="" width={28} height={14} />
-          </button>
-          <Link href="/">
-            <Image src={"/icons/logo-light.svg"} width={100} height={65} alt="Logo" />
-          </Link>
+          <button className="">{/* <Image src="/icons/sound-icon.svg" alt="" width={28} height={14} /> */}</button>
+          <Link href="/">{/* <Image src={"/icons/logo-light.svg"} width={100} height={65} alt="Logo" /> */}</Link>
           <button className="uppercase font-medium"> Inquire </button>
         </header>
         {children}
-        <Switcher />
       </body>
     </html>
   );

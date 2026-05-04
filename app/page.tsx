@@ -1,3 +1,9 @@
+import InquireForm from "@/comonents/InquireForm/InquireForm";
+
 export default function Home() {
-  return <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans "></div>;
+  return (
+    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans ">
+      <InquireForm />
+    </div>
+  );
 }

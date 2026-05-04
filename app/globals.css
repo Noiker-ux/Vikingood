@@ -3,7 +3,7 @@
 :root {
   --primary-color: #456a4b;
   --primary-light-color: #798d73;
-  --secondary: #a8611a;
+  --secondary-color: #a8611a;
   --background: #fffbe7;
   --placeholder: #d1c6ac;
 }
@@ -12,6 +12,20 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.primary-button {
-  @apply w-full font-medium transition-all duration-200 h-24 sm:h-16 uppercase bg-(--primary-light-color) cursor-pointer hover:bg-(--primary-color);
+@layer components {
+  .secondaryBtn {
+    @apply px-2 py-4 font-bold border-2 border-[--secondary-color]  text-[var(--secondary-color)] w-full relative transition-all overflow-hidden cursor-pointer
+           after:content-[''] after:bg-[url("../public/patterns/pattern_right.svg")] after:absolute after:-right-full after:top-0 after:bottom-0 after:transition-all after:h-full after:w-24 after:z-10 after:bg-no-repeat after:bg-top-right after:bg-cover
+           before:content-[''] before:bg-[url("../public/patterns/pattern_left.svg")] before:absolute before:-left-full before:top-0 before:bottom-0 before:transition-all before:h-full before:w-24 before:z-10 before:bg-no-repeat before:bg-cover
+           hover:after:right-0 hover:before:left-0;
+  }
+  /* .secondaryBtn {
+    @apply px-2 py-2  bg-(--secondary-color) text-white w-full relative transition-all overflow-hidden cursor-pointer
+           after:content-['After'] after:absolute after:-right-full after:top-0 after:bottom-0 after:transition-all after:h-full
+           hover:after:right-0;
+  }
+  .ulink {
+    @apply after:content-[''] after:left-0 after:-bottom-0.5 after:w-0 after:h-0.5 after:transition-all
+           hover:after:w-full;
+  } */
 }
