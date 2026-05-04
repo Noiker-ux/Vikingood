@@ -24,4 +24,23 @@ body {
            before:content-[''] before:bg-[url("../public/patterns/pattern_left.svg")] before:absolute before:-left-full before:top-0 before:bottom-0 before:transition-all before:h-full before:w-24 before:z-10 before:bg-no-repeat before:bg-cover
            hover:after:right-0 hover:before:left-0;
   }
+  .input-primary {
+    @apply bg-transparent rounded-none pl-0! border-b-2 border-[var(--primary-light-color)] border-l-0 border-t-0 border-r-0 shadow-none w-full
+           focus:outline-none
+           hover:bg-transparent hover:border-[var(--primary-color)];
+  }
+}
+.input:focus,
+input:hover,
+.input[data-focused="true"],
+.select:focus,
+.select:hover,
+.select[data-focused="true"],
+.select__trigger {
+  box-shadow: none;
+  outline: none;
+  background-color: transparent;
+}
+.select__trigger {
+  padding-left: 0;
 }
