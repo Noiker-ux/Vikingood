@@ -1,5 +1,7 @@
 "use client";
 
+import { Input } from "@heroui/react/input";
+
 export default function InquireForm() {
   return (
     <div className="w-1/3 bg-[var(--background-color)] h-screen absolute top-0 right-0">
@@ -14,12 +16,13 @@ export default function InquireForm() {
           всего 26 жилых комплексов, нет лучшего момента, чем сейчас.
         </p>
         <form className="mt-10">
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 pb-3 border-b-2 border-gray-300">
             <div className="w-2 h-2 rounded-full bg-[var(--secondary-color)]"></div>
             <p className="text-[var(--secondary-color)]">Контактная информация</p>
           </div>
-          <div className="flex justify-between ">
-            <button className="primaryBtn w-full">Отправить</button>
+          <div className="flex justify-between mt-3">
+            <Input id="input-firstName" type="text" placeholder="Имя" />
+            <Input variant="secondary" id="input-middleName" type="text" placeholder="Фамилия" />
           </div>
         </form>
       </div>
