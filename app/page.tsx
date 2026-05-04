@@ -1,9 +1,9 @@
-import InquireForm from "@/comonents/InquireForm/InquireForm";
+import Switcher from "@/comonents/Switcher/Switcher";
 
 export default function Home() {
   return (
     <div className="">
-      <InquireForm />
+      <Switcher />
     </div>
   );
 }

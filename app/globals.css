@@ -15,8 +15,8 @@ body {
 
 @layer components {
   .primaryBtn {
-    @apply px-2 py-4 font-bold  bg-(--primary-light-color) text-white w-full relative transition-all overflow-hidden cursor-pointer
-           hover:bg-[url("../public/patterns/pattern_full.svg")] hover:bg-[var(--primary-color)] hover:bg-cover hover:bg-no-repeat;
+    @apply px-2 py-7 font-bold  bg-(--primary-light-color) text-white w-full relative transition-all overflow-hidden cursor-pointer rounded-none!
+           hover:bg-[url("../public/patterns/pattern_full.svg")] hover:bg-[var(--primary-color)] hover:bg-cover hover:bg-no-repeat hover:bg-center;
   }
   .secondaryBtn {
     @apply px-2 py-4 font-bold border-2 border-[--secondary-color]  text-[var(--secondary-color)] w-full relative transition-all overflow-hidden cursor-pointer
@@ -30,13 +30,27 @@ body {
            hover:bg-transparent hover:border-[var(--primary-color)];
   }
 }
+
+.checkbox__control {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+}
+:is(.checkbox[data-selected="true"], .checkbox[data-indeterminate="true"]) .checkbox__indicator {
+  background-color: var(--primary-color);
+}
+.checkbox:focus,
+.checkbox:hover,
+.checkbox[data-focused="true"],
 .input:focus,
 input:hover,
 .input[data-focused="true"],
 .select:focus,
 .select:hover,
 .select[data-focused="true"],
-.select__trigger {
+.select__trigger,
+.textarea[data-slot="textarea"],
+.textarea:focus,
+.textarea:hover {
   box-shadow: none;
   outline: none;
   background-color: transparent;

@@ -1,13 +1,14 @@
 "use client";
 
-import { Button, Checkbox, Label, ListBox, Select, TextArea, TextField } from "@heroui/react";
+import { Button, Checkbox, CloseButton, Label, ListBox, Select, TextArea, TextField } from "@heroui/react";
 import { Input } from "@heroui/react/input";
 
 export default function InquireForm() {
   return (
     <div className="w-1/3 bg-[var(--background-color)] h-screen absolute top-0 right-0 overflow-y-scroll">
-      <div className="py-8 pl-6 pr-3 bg-[var(--primary-color)] text-white uppercase text-sm">
+      <div className="py-8 pl-12 pr-3 bg-[var(--primary-color)] text-white uppercase text-sm flex justify-between">
         <p>Задать вопрос</p>
+        <CloseButton />
       </div>
       <div className="py-10 px-12">
         <h1 className="text-[var(--primary-color)] text-4xl">Задать вопрос</h1>
@@ -82,7 +83,7 @@ export default function InquireForm() {
               <Label className="text-xs text-[var(--primary-color)]">Текст сообщения</Label>
               <TextArea
                 aria-label="Введите текст сообщения"
-                className="h-auto input-primary"
+                className="h-min input-primary"
                 placeholder="Введите текст сообщения"
               />
             </TextField>
