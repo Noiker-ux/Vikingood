@@ -1,5 +1,5 @@
-export function getNowWeather(date: Date) {
+export function getNowWeather() {
   const seasons = ["Зима", "Весна", "Лето", "Осень"];
-  const month = date.getMonth();
+  const month = new Date().getMonth();
   return seasons[Math.floor((month + 1) / 3)];
 }
