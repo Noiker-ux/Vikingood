@@ -4,14 +4,17 @@ import { getNowWeather } from "@/utils/getNowWeather";
 import { Button } from "@heroui/react/button";
 import { Tooltip } from "@heroui/react/tooltip";
 
-import { Fragment, useState } from "react";
+import { useState } from "react";
 export default function Switcher() {
   const [weather, setWeather] = useState(getNowWeather());
   const weatherInfo = weatherList.find((item) => item.id === weather);
   const [hover, setHover] = useState(false);
   return (
-    <div className="absolute right-10 bottom-10 mt-20 ml-40 flex flex-col w-fit" onMouseLeave={() => setHover(false)}>
-      <div className={`flex flex-col overflow-hidden  ${hover ? "h-auto " : "h-0"}`}>
+    <div
+      className="absolute transition-all right-10 bottom-10 mt-20 ml-40 flex flex-col w-fit"
+      onMouseLeave={() => setHover(false)}
+    >
+      <div className={`flex flex-col overflow-hidden transition  ${hover ? "h-full " : "h-0"}`}>
         {weatherList
           .filter((e) => e.id != weather)
           .map((weatherItem) => (

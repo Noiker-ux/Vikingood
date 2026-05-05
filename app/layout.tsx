@@ -3,6 +3,7 @@ import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import Link from "next/link";
+import Header from "@/comonents/Header/Header";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -22,11 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={` ${geistMono.variable} h-full antialiased dark:bg-black`}>
       <body className="min-h-full flex flex-col bg-black">
-        <header className=" bg-red-300 flex justify-between items-center px-16 py-3">
-          <button className="">{/* <Image src="/icons/sound-icon.svg" alt="" width={28} height={14} /> */}</button>
-          <Link href="/">{/* <Image src={"/icons/logo-light.svg"} width={100} height={65} alt="Logo" /> */}</Link>
-          <button className="uppercase font-medium"> Inquire </button>
-        </header>
+        <Header />
         {children}
       </body>
     </html>
