@@ -1,22 +1,50 @@
 "use client";
+import { weatherList } from "@/data/weatherList";
 import { getNowWeather } from "@/utils/getNowWeather";
 import { Button } from "@heroui/react/button";
 import { Tooltip } from "@heroui/react/tooltip";
-import Image from "next/image";
-import { useState } from "react";
+
+import { Fragment, useState } from "react";
 export default function Switcher() {
-  const [weather, setWeather] = useState();
+  const [weather, setWeather] = useState(getNowWeather());
+  const weatherInfo = weatherList.find((item) => item.id === weather);
+
   return (
-    <div className="mt-20">
+    <div className="mt-20 ml-40 flex flex-col">
       <Tooltip delay={0}>
-        <Button>
-          <Image src={"/icons/weathers/summer.svg"} alt="Summer Icon" width={20} height={20} />
+        <Button isIconOnly className={"rounded-none p-6 bg-[var(--background-color)] "}>
+          <div className="text-xl w-7 h-7 fill-[var(--primary-color)]">{weatherInfo?.icon}</div>
         </Button>
-        <Tooltip.Content>
+        <Tooltip.Content
+          className={
+            "py-2.5 px-6 rounded-none text-md bg-[var(--background-color)] font-bold text-lg text-[var(--primary-color)]"
+          }
+          placement="left"
+          offset={15}
+        >
           <Tooltip.Arrow />
-          <p className="bg-red-500 z-20">{getNowWeather()}</p>
+          {weatherInfo?.label}
         </Tooltip.Content>
       </Tooltip>
+      {weatherList
+        .filter((e) => e.id != weather)
+        .map((weatherItem) => (
+          <Tooltip key={weatherItem.id} delay={0}>
+            <Button isIconOnly className={"rounded-none p-6 bg-[var(--primary-color)] "}>
+              {weatherItem.icon}
+            </Button>
+            <Tooltip.Content
+              className={
+                "py-2.5 px-6 rounded-none text-md bg-[var(--background-color)] font-bold text-lg text-[var(--primary-color)]"
+              }
+              placement="left"
+              offset={15}
+            >
+              <Tooltip.Arrow />
+              {weatherItem.label}
+            </Tooltip.Content>
+          </Tooltip>
+        ))}
     </div>
   );
 }
